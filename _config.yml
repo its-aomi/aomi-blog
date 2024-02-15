@@ -1,28 +1,28 @@
 # Site settings
-site: Ephesus
-title: Ephesus - Minimalist Jekyll Theme
-keywords: ephesus, blog
+site: Amitabh Borah
+title: Amitabh Borah - Freelance Frontend Developer, Blogger & Part-time Motorcyclist
+keywords: amitabh borah, amitabh borah resume
 description: >-
-  Ephesus - Minimalist Jekyll Theme
+  About Amitabh Borah, a Freelance Frontend Developer, Blog Writer and Owner, and a Part-time Motorcyclist and Traveler.
 lang: en-US
-timezone:  Europe/Istanbul
-repo: https://github.com/onepase/Ephesus # site repo [optional]
+timezone:  Asia/Kolakata
+repo: # site repo [optional]
 google_verify:      XXX # Put your Google Verification here
 google_analytics:   UA-XXXXXXXX-00 # Put your Google Analytics code
 discus-identifier:  XXX
 
 # Author settings
 author:
-  name: Hakan Torun
-  bio: Computer Engineer @pardinus <br> Founder @zaqa <br> Open Source /#linux
+  name: Amitabh Borah
+  bio: Freelance Frontend Developer <br> Founder offroadpioneers.com <br> Motorcyclist
   picture: assets/images/profile.jpg 
-  github: onepase # github username
-  twitter: onepase # twitter username
-  facebook: onepase # facebook username
-  instagram: onepase # instagram username
-  youtube: https://www.youtube.com/channel/UCMmAto-wxBootXN91AzBiDg # youtube username
-  linkedin: hakantorun # linkedin username
-  email: your-email@email.com # email adress
+  github: its-aomi # github username
+  twitter: # twitter username
+  facebook: # facebook username
+  instagram: # instagram username
+  youtube: # youtube username
+  linkedin: # linkedin username
+  email: aomi@duck.com # email adress
 
 
 # URL settings
