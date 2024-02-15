@@ -101,16 +101,16 @@
            const content = document.getElementById('content').value.trim();
          
            const markdown = `---
-         title: "${title}"
-         date: ${date}
-         author: ${author}
-         layout: post
-         permalink: /${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '')}/
-         categories: ${categories}
-         tags: [${tags}]
-         ---
-         
-         ${content}`;
+title: "${title}"
+date: ${date}
+author: ${author}
+layout: post
+permalink: /${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '')}/
+categories: ${categories}
+tags: [${tags}]
+---
+
+${content}`;
          
            document.getElementById('output').value = markdown;
          }
@@ -119,8 +119,8 @@
            const contentTextarea = document.getElementById('content');
            const selectedText = contentTextarea.value.substring(contentTextarea.selectionStart, contentTextarea.selectionEnd);
            const newText = `{% highlight language %}
-         ${selectedText}
-         {% endhighlight %}`;
+${selectedText}
+{% endhighlight %}`;
            contentTextarea.setRangeText(newText);
          }
          
@@ -128,8 +128,8 @@
            const contentTextarea = document.getElementById('content');
            const selectedText = contentTextarea.value.substring(contentTextarea.selectionStart, contentTextarea.selectionEnd);
            const newText = `\`\`\`
-         ${selectedText}
-         \`\`\``;
+${selectedText}
+\`\`\``;
            contentTextarea.setRangeText(newText);
          }
          
