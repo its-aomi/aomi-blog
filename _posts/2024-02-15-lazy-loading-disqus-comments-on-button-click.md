@@ -1,6 +1,6 @@
 ---
 title: "Lazy Loading Disqus Comments on Button Click"
-date: 2024-02-15
+date: 2024-02-14
 author: Amitabh Borah
 layout: post
 permalink: /lazy-loading-disqus-comments-on-button-click/
