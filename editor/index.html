@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Markdown Editor</title>
+      <style>
+         body {
+         font-family: Arial, sans-serif;
+         background-color: #1c1c1e;
+         color: #eaeaea;
+         }
+         h1 {
+         color: #ffffff;
+         }
+         label {
+         color: #eaeaea;
+         }
+         input[type="text"],
+         textarea {
+         width: 100%;
+         padding: 8px;
+         margin-bottom: 10px;
+         background-color: #2c2c2e;
+         border: 1px solid #505053;
+         border-radius: 4px;
+         color: #eaeaea;
+         }
+         button {
+         padding: 8px 16px;
+         margin-right: 10px;
+         background-color: #007aff;
+         color: #ffffff;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+         }
+         button:hover {
+         background-color: #0056b3;
+         }
+         textarea {
+         resize: vertical;
+         }
+         #output,
+         #fileName {
+         width: 100%;
+         padding: 8px;
+         margin-top: 10px;
+         background-color: #2c2c2e;
+         border: 1px solid #505053;
+         border-radius: 4px;
+         color: #eaeaea;
+         }
+         #fileName {
+         cursor: default;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Markdown Editor</h1>
+      <div>
+         <label for="title">Title:</label><br>
+         <input type="text" id="title"><br><br>
+         <label for="date">Date:</label><br>
+         <input type="text" id="date"><br><br>
+         <label for="author">Author:</label><br>
+         <input type="text" id="author"><br><br>
+         <label for="categories">Categories:</label><br>
+         <input type="text" id="categories"><br><br>
+         <label for="tags">Tags:</label><br>
+         <input type="text" id="tags"><br><br>
+         <label for="content">Content:</label><br>
+         <textarea id="content" rows="10" cols="50"></textarea><br><br>
+         <button type="button" onclick="addHighlight()">Code Highlight</button>
+         <button type="button" onclick="addCodeBlock()">Code Block</button>
+         <button type="button" onclick="addLink()">Link</button>
+         <button type="button" onclick="addImage()">Image</button>
+         <button type="button" onclick="addList()">List</button><br><br>
+         <button type="button" onclick="generateMarkdown()">Generate Markdown</button>
+      </div>
+      <hr>
+      <div>
+         <h2>Generated Markdown:</h2>
+         <textarea id="output" rows="10" cols="50"></textarea>
+         <br>
+         <button type="button" onclick="generateFileName()">Generate File Name</button>
+         <input type="text" id="fileName" readonly>
+      </div>
+      <script>
+         function generateMarkdown() {
+           const title = document.getElementById('title').value.trim();
+           const date = document.getElementById('date').value.trim();
+           const author = document.getElementById('author').value.trim();
+           const categories = document.getElementById('categories').value.trim();
+           const tags = document.getElementById('tags').value.trim();
+           const content = document.getElementById('content').value.trim();
+         
+           const markdown = `---
+         title: "${title}"
+         date: ${date}
+         author: ${author}
+         layout: post
+         permalink: /${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '')}/
+         categories: ${categories}
+         tags: [${tags}]
+         ---
+         
+         ${content}`;
+         
+           document.getElementById('output').value = markdown;
+         }
+         
+         function addHighlight() {
+           const contentTextarea = document.getElementById('content');
+           const selectedText = contentTextarea.value.substring(contentTextarea.selectionStart, contentTextarea.selectionEnd);
+           const newText = `{% highlight language %}
+         ${selectedText}
+         {% endhighlight %}`;
+           contentTextarea.setRangeText(newText);
+         }
+         
+         function addCodeBlock() {
+           const contentTextarea = document.getElementById('content');
+           const selectedText = contentTextarea.value.substring(contentTextarea.selectionStart, contentTextarea.selectionEnd);
+           const newText = `\`\`\`
+         ${selectedText}
+         \`\`\``;
+           contentTextarea.setRangeText(newText);
+         }
+         
+         function addLink() {
+           const contentTextarea = document.getElementById('content');
+           const selectedText = contentTextarea.value.substring(contentTextarea.selectionStart, contentTextarea.selectionEnd);
+           const linkURL = prompt("Enter the URL:");
+           if (linkURL) {
+             const newText = `[${selectedText}](${linkURL})`;
+             contentTextarea.setRangeText(newText);
+           }
+         }
+         
+         function addImage() {
+           const contentTextarea = document.getElementById('content');
+           const imageURL = prompt("Enter the image URL:");
+           if (imageURL) {
+             const newText = `![Alt text](${imageURL})`;
+             contentTextarea.setRangeText(newText);
+           }
+         }
+         
+         function addList() {
+           const contentTextarea = document.getElementById('content');
+           const selectedText = contentTextarea.value.substring(contentTextarea.selectionStart, contentTextarea.selectionEnd);
+           const listType = prompt("Enter 'ul' for bullet points or 'ol' for numbered list:");
+           if (listType && (listType === 'ul' || listType === 'ol')) {
+             const items = selectedText.split('\n');
+             let newText = '';
+             if (listType === 'ul') {
+               items.forEach(item => {
+                 newText += `- ${item}\n`;
+               });
+             } else {
+               items.forEach((item, index) => {
+                 newText += `${index + 1}. ${item}\n`;
+               });
+             }
+             contentTextarea.setRangeText(newText);
+           }
+         }
+         
+         function generateFileName() {
+           const title = document.getElementById('title').value.trim();
+           const date = document.getElementById('date').value.trim();
+           const fileName = `${date}-${title.replace(/\s+/g, '-').toLowerCase()}.md`;
+           document.getElementById('fileName').value = fileName;
+         }
+         
+         // Automatically set current date when the page loads
+         window.onload = function() {
+           const now = new Date();
+           const dateString = now.toISOString().slice(0, 10);
+         
+           document.getElementById('date').value = dateString;
+         };
+      </script>
+   </body>
+</html>
