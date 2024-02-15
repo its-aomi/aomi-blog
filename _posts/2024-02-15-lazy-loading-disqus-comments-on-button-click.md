@@ -8,7 +8,7 @@ categories: coding
 tags: [coding, javscript]
 ---
 
-# Using Javascript to lazy load disqus comments and loading it on button click.
+**Using Javascript to lazy load disqus comments and loading it on button click.**
 
 So few months i was working on a static blog and wanted a comments system in it, i did some research and stumbled upon disqus which seemed to be the perfect solution.<br>
 
