@@ -20,7 +20,7 @@ Below the is the code that does the job:
 
 {% highlight javascript %}
 
-    	// define a function to load Disqus comments
+// define a function to load Disqus comments
 
 function loadDisqus() {
 var disqus_config = function () {
