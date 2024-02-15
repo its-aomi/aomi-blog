@@ -1,9 +1,9 @@
 ---
-title: "Day 1: Staring a New Journey"
+title: "Day 1: Starting a New Journey"
 date: 2024-02-15
 author: Amitabh Borah
 layout: post
-permalink: /day-1-staring-a-new-journey/
+permalink: /day-1-starting-a-new-journey/
 categories: life
 tags: [life]
 ---
