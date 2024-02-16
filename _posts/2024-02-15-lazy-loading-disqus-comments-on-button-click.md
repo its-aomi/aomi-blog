@@ -1,11 +1,13 @@
 ---
 title: "Lazy Loading Disqus Comments on Button Click"
+description: "Using Javascript to lazy load disqus comments and loading it on button click."
 date: 2024-02-14
 author: Amitabh Borah
 layout: post
 permalink: /lazy-loading-disqus-comments-on-button-click/
 categories: coding
 tags: [coding, javscript]
+image: "assets/images/lazy-loading-disqus-comments.jpg"
 ---
 
 **Using Javascript to lazy load disqus comments and loading it on button click.**

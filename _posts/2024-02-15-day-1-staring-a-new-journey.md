@@ -1,5 +1,6 @@
 ---
 title: "Day 1: Starting a New Journey"
+description: "Amitabh Borah's Online Diary Day 1"
 date: 2024-02-15 
 author: Amitabh Borah
 layout: post
