@@ -66,14 +66,20 @@
       <div>
          <label for="title">Title:</label><br>
          <input type="text" id="title"><br><br>
+         <label for="meta_description">Meta Description:</label><br>
+         <input type="text" id="meta_description"><br><br>
          <label for="date">Date:</label><br>
          <input type="text" id="date"><br><br>
+         <label for="time">Time:</label><br>
+         <input type="text" id="time"><br><br>
          <label for="author">Author:</label><br>
          <input type="text" id="author"><br><br>
          <label for="categories">Categories:</label><br>
          <input type="text" id="categories"><br><br>
          <label for="tags">Tags:</label><br>
          <input type="text" id="tags"><br><br>
+         <label for="image">Post Image:</label><br>
+         <input type="text" id="image"><br><br>
          <label for="content">Content:</label><br>
          <textarea id="content" rows="10" cols="50"></textarea><br><br>
          <button type="button" onclick="addHighlight()">Code Highlight</button>
@@ -94,20 +100,27 @@
       <script>
          function generateMarkdown() {
            const title = document.getElementById('title').value.trim();
+           const metaDescription = document.getElementById('meta_description').value.trim();
            const date = document.getElementById('date').value.trim();
+           const time = document.getElementById('time').value.trim();
            const author = document.getElementById('author').value.trim();
            const categories = document.getElementById('categories').value.trim();
            const tags = document.getElementById('tags').value.trim();
+           const image = document.getElementById('image').value.trim();
            const content = document.getElementById('content').value.trim();
+         
+           const isoDateTime = new Date(`${date}T${time}`).toISOString();
          
            const markdown = `---
 title: "${title}"
-date: ${date}
+meta_description: "${metaDescription}"
+date: ${isoDateTime}
 author: ${author}
 layout: post
 permalink: /${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '')}/
 categories: ${categories}
 tags: [${tags}]
+image: "${image}"
 ---
 
 ${content}`;
@@ -173,18 +186,23 @@ ${selectedText}
          }
          
          function generateFileName() {
-           const title = document.getElementById('title').value.trim();
-           const date = document.getElementById('date').value.trim();
-           const fileName = `${date}-${title.replace(/\s+/g, '-').toLowerCase()}.md`;
-           document.getElementById('fileName').value = fileName;
-         }
+    const title = document.getElementById('title').value.trim();
+    const date = document.getElementById('date').value.trim();
+    // Extracting only the date portion from the ISO string
+    const isoDate = new Date(date).toISOString().slice(0, 10);
+    // Creating the filename using only the date
+    const fileName = `${isoDate}-${title.replace(/\s+/g, '-').toLowerCase()}.md`;
+    document.getElementById('fileName').value = fileName;
+  }
          
-         // Automatically set current date when the page loads
+         // Automatically set current date and time when the page loads
          window.onload = function() {
            const now = new Date();
            const dateString = now.toISOString().slice(0, 10);
+           const timeString = now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
          
            document.getElementById('date').value = dateString;
+           document.getElementById('time').value = timeString;
          };
       </script>
    </body>

@@ -1,6 +1,6 @@
 ---
 title: "Day 1: Starting a New Journey"
-date: 2024-02-15
+date: 2024-02-15 
 author: Amitabh Borah
 layout: post
 permalink: /day-1-starting-a-new-journey/
