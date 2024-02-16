@@ -138,11 +138,6 @@ section.comment-area {
 .pagination .prev{color: var(--primary-font-color); font-weight: 600;}
 .pagination .next{color: var(--primary-font-color); font-weight: 600; text-align: right;}
 
-.blog-post-content{
-  width: 100%;
-  font-size: 18px;
-}
-
 .post-tag{background: var(--bg-color); color:var(--primary-font-color); padding: 5px 10px;}
 
 .profile{
