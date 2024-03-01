@@ -10,8 +10,8 @@ tags: [life]
 image: ""
 ---
 
-Took two days break again I don't know why I don't feel like working at all\
+Took two days break again I don't know why I don't feel like working at all<br>
 
-Maybe because there's no motivation for it. Maybe I don't know.\
+Maybe because there's no motivation for it. Maybe I don't know.<br>
 
 Today wasn't that of a good day too, luck wasn't on my side today.
