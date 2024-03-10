@@ -3,7 +3,7 @@ site: Amitabh Borah
 title: Amitabh Borah
 keywords: amitabh borah, amitabh borah resume
 description: >-
-  About Amitabh Borah, a Freelance Frontend Developer, Blog Writer and Owner, and a Part-time Motorcyclist and Traveler.
+  About Amitabh Borah, Blog Writer and Motorcyclist and Traveler.
 lang: en-US
 timezone:  Asia/Kolakata
 repo: # site repo [optional]
@@ -14,7 +14,7 @@ discus-identifier:  XXX
 # Author settings
 author:
   name: Amitabh Borah
-  bio: Freelance Developer <br> Founder offroadpioneers.com <br> Motorcyclist
+  bio: Founder offroadpioneers.com <br> Motorcyclist
   picture: assets/images/profile.jpg 
   github: its-aomi # github username
   twitter: # twitter username
