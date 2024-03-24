@@ -2,7 +2,7 @@
 layout: post
 title:  "French Wine has to compete with many new world wines"
 author: john
-categories: [ Lifestyle ]
+categories: [ PLugins]
 tags: [France]
 image: assets/images/5.jpg
 ---
