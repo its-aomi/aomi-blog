@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -9,14 +9,68 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    
+
     <title>{{ page.title }} | {{site.name}}</title>
-    
-    {% seo %}
-    
+
+    <meta name="description"
+        content="{% if page.description %}{{page.description}}{% else %}{{site.description}}{% endif %}">
+    <meta name="keywords" content="{% if page.tags %}{{page.tags}}{% else %}{{site.keywords}}{% endif %}">
+    <base href="{{ site.url }}" />
+    {% if page.date %}
+    <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+    <meta content="{{ site.url }}/about/" property="article:author">
+    {% endif %}
+    <meta property="og:site_name" content="{{site.title}}">
+    <meta property="og:type" content="{% if page.title %}article{% else %}website{% endif %}" />
+    <meta property="og:url" content="{{ site.url }}{{page.url}}" />
+    <meta property="og:title"
+        content="{% if page.title %}{{page.title}} - Amitabh Borah{% else %}{{site.title}}{% endif %}" />
+    <meta property="og:description"
+        content="{% if page.description %}{{page.description}} {% else %}{{site.description}}{% endif %}" />
+    <meta property="og:image"
+        content="{% if page.title %}https://res.cloudinary.com/dkaxmhco0/image/upload/l_text:Arial_80:{{ page.title | replace: ' ', '_' }}/fl_layer_apply/slhzxxgpldw3fntkto3s.jpg{% else %}{{ site.url }}/assets/images/favicon.png{% endif %}" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title"
+        content="{% if page.title %}{{page.title}} - Amitabh Borah {% else %}{{site.title}}{% endif %}" />
+    <meta property="twitter:description"
+        content="{% if page.description %}{{page.description}} {% else %}{{site.description}}{% endif %}" />
+    <meta property="twitter:image"
+        content="{{ site.url }}/{% if page.image %}{{page.image}}{% else %}assets/images/favicon.png{% endif %}" />
+
+
+    {% assign canonical_url = site.url | append: page.url %}
+    <link rel="canonical" href="{{ canonical_url | absolute_url }}" />
+
+
+    {% assign next_page = site.pages | where_exp: "item", "item.url > page.url" | first %}
+    {% if next_page %}
+    <link rel="next" href="{{ next_page.url | absolute_url }}" />
+    {% endif %}
+
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "description": "{{ site.description | escape }}",
+  "headline": "{{ page.title | escape }}",
+  "name": "{{ site.title | escape }}",
+  "publisher": {
+    "@type": "Organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}/assets/images/logo-aomi.png"
+    },
+    "name": "{{ site.author | escape }}"
+  },
+  "url": "{{ canonical_url | absolute_url }}"
+}
+</script>
+
+
     <link href="{{ site.baseurl }}/assets/css/prism.css" rel="stylesheet">
     <link href="{{ site.baseurl }}/assets/css/theme.css" rel="stylesheet">
-    
+
     <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 </head>
 
@@ -25,121 +79,131 @@
 <!-- change your GA id in _config.yml -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{site.google_analytics}}"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', '{{site.google_analytics}}');
+    gtag('config', '{{site.google_analytics}}');
 </script>
 {% endif %}
 
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
+
 <body>
-	<!-- defer loading of font and font awesome -->
-	<noscript id="deferred-styles">
-		<link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-	</noscript>
+    <!-- defer loading of font and font awesome -->
+    <noscript id="deferred-styles">
+        <link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </noscript>
 
-<!-- Begin Sidebar Navigation
+    <!-- Begin Sidebar Navigation
 ================================================== -->
 
-<div class="sidebar">    
-</div>   
-<div class="nav-icon">
-    <div class="hamburger-bar"></div>
-</div>
-<div id="blackover-nav" class="blackover"></div>
-<nav id="menu">
-    <ul>
-        <h3>Navigation</h3>
-        <li><a href="{{ site.baseurl }}/">Home</a></li>
-        <li><a href="{{ site.baseurl }}/about">About</a></li>
-        <li><a href="{{ site.baseurl }}/authors">Contributors</a></li>
-        <li><a href="{{ site.baseurl }}/categories#Plugins">Plugins <span class="badge badge-primary">new</span></a></li>
-        <li><a href="{{ site.baseurl }}/categories#Codes">Codes <span class="badge badge-primary">new</span></a></li>
-        <li><a href="{{ site.baseurl }}/contact">Contact</a></li>       
-    </ul>   
-</nav>
-
-{% include search-lunr.html %}
-
-
-<!-- End Sidebar Navigation
-================================================== -->
-
-<div class="site-content {% if page.url == '/' %} firstpage {% endif %}">
-
-<div class="container">
-
-    <!-- Site Logo/Name
-    ================================================== -->
-   
-    <a class="navbar-brand" href="{{ site.baseurl }}/">
-        <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
-    </a>  
-   
-
-    <!-- Site Tag
-    ================================================== -->
-    {% if page.url == '/' %}
-        <p class="sitetag">
-            {{ site.description }}
-        </p>
-        <p>I'm currently a full time freelance developer and i manage my own plugins & code store at <a href="https://1dollarcode.com/">1dollarCode.com</a> where i provide you simple plugins and codes for day to day use. I also have an interest in motorcycles and love to ride and go on motorcycle tours.</p>
-    {% endif %}
-
-    <!-- Content
-    ================================================== -->
-    <div class="main-content">
-        {{ content }}
+    <div class="sidebar">
     </div>
-
-    {% if site.mailchimp-list %}
-    <!-- Newsletter
-    ================================================== -->
-    <div class="newsletter text-center">
-        <span class="h4"><img src="{{ site.baseurl }}/{{ site.logo }}" class="newsletter-logo" alt="{{site.title}}"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
-        <div class="klaviyo-form-Uk9Evz"></div>
+    <div class="nav-icon">
+        <div class="hamburger-bar"></div>
     </div>
-    {% endif %}
-    
-</div>
+    <div id="blackover-nav" class="blackover"></div>
+    <nav id="menu">
+        <ul>
+            <h3>Navigation</h3>
+            <li><a href="{{ site.baseurl }}/">Home</a></li>
+            <li><a href="{{ site.baseurl }}/about">About</a></li>
+            <li><a href="{{ site.baseurl }}/authors">Contributors</a></li>
+            <li><a href="{{ site.baseurl }}/categories#Plugins">Plugins <span class="badge badge-primary">new</span></a>
+            </li>
+            <li><a href="{{ site.baseurl }}/categories#Codes">Codes <span class="badge badge-primary">new</span></a>
+            </li>
+            <li><a href="{{ site.baseurl }}/contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<!-- Begin Footer
+    {% include search-lunr.html %}
+
+
+    <!-- End Sidebar Navigation
 ================================================== -->
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-12 text-center text-lg-left">
-                Copyright © {{ site.time | date: "%Y" }} 1dollarCode.com | All Rights Reserved 
+
+    <div class="site-content {% if page.url == '/' %} firstpage {% endif %}">
+
+        <div class="container">
+
+            <!-- Site Logo/Name
+    ================================================== -->
+
+            <a class="navbar-brand" href="{{ site.baseurl }}/">
+                <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
+            </a>
+
+
+            <!-- Site Tag
+    ================================================== -->
+            {% if page.url == '/' %}
+            <p class="sitetag">
+                {{ site.description }}
+            </p>
+            <p>I'm currently a full time freelance developer and i manage my own plugins & code store at <a
+                    href="https://1dollarcode.com/">1dollarCode.com</a> where i provide you simple plugins and codes for
+                day to day use. I also have an interest in motorcycles and love to ride and go on motorcycle tours.</p>
+            {% endif %}
+
+            <!-- Content
+    ================================================== -->
+            <div class="main-content">
+                {{ content }}
             </div>
-            <div class="col-md-6 col-sm-12 text-center text-lg-right">    
-                Made with 💚 by Amitabh Borah
+
+            {% if site.mailchimp-list %}
+            <!-- Newsletter
+    ================================================== -->
+            <div class="newsletter text-center">
+                <span class="h4"><img src="{{ site.baseurl }}/{{ site.logo }}" class="newsletter-logo"
+                        alt="{{site.title}}"> &nbsp; Never miss a <b>story</b> from us, subscribe to our
+                    newsletter</span>
+                <div class="klaviyo-form-Uk9Evz"></div>
             </div>
+            {% endif %}
+
         </div>
-    </div>
-</footer>
-<!-- End Footer
+
+        <!-- Begin Footer
+================================================== -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 text-center text-lg-left">
+                        Copyright © {{ site.time | date: "%Y" }} 1dollarCode.com | All Rights Reserved
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-center text-lg-right">
+                        Made with 💚 by Amitabh Borah
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer
 ================================================== -->
 
-</div> <!-- /.site-content -->
+    </div> <!-- /.site-content -->
 
-<!-- Scripts (if you need bootstrap.js, please add it yourself. I didn't use it for performance reasons, it was not needed in this theme)
+    <!-- Scripts (if you need bootstrap.js, please add it yourself. I didn't use it for performance reasons, it was not needed in this theme)
 ================================================== -->
 
-<script src="{{ site.baseurl }}/assets/js/prism.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/prism.js"></script>
 
-<script src="{{ site.baseurl }}/assets/js/theme.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/theme.js"></script>
 
-{% if site.lazyimages == "enabled" %}
-<script src="{{ site.baseurl }}/assets/js/lazyload.js"></script>
-{% endif %}
+    {% if site.lazyimages == "enabled" %}
+    <script src="{{ site.baseurl }}/assets/js/lazyload.js"></script>
+    {% endif %}
 
-{% if page.layout == 'post' %}
-<script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
-{% endif %}
+    {% if page.layout == 'post' %}
+    <script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
+    {% endif %}
 
-<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=R4uuvH"></script>
+    <script async type="text/javascript"
+        src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=R4uuvH"></script>
 </body>
+
 </html>
