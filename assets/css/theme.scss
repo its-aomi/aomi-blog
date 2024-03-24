@@ -118,6 +118,16 @@ img, img:hover {
     margin-bottom:40px;
     margin-top:40px;
 }
+
+.navbar-brand {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30px;
+}
+
 .sidebar {
     position: fixed;
     left: 0px;
