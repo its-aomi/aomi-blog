@@ -312,7 +312,7 @@ img.featured-image {
         margin-top: 10px;
     }
     .img-thumb {
-        object-fit:cover;
+        object-fit:contain;
         height:240px;
         width:100%;
         object-position:top;
@@ -332,7 +332,7 @@ img.featured-image {
             font-size:28px;
         }
         .img-thumb {
-            object-fit:cover;
+            object-fit:contain;
             height:400px;
             width:100%;
             object-position:top;
@@ -344,7 +344,7 @@ img.featured-image {
             display:none;
         }
         .img-thumb {
-            object-fit:cover;
+            object-fit:contain;
             height:160px;
             width:100%;
             object-position:top;
