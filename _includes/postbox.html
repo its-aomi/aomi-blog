@@ -13,10 +13,10 @@
                         <img class="img-thumb" src="{{ post.image }}" alt="{{ post.title }}">
                     {% endif %}
                 {% else %}
-                {% assign default_image = page.title | replace: ' ', '%20' | replace: ',', '%2C' %}
-                {% assign encoded_text = default_image | replace: '%', '%25' | replace: '&', '%26' | replace: ':', '%3A' | replace: '#', '%23' | replace: '?', '%3F' | replace: '$', '%24' | replace: '@', '%40' | replace: '+', '%2B' | replace: '/', '%2F' | replace: '\\', '%5C' %}
-                {% assign text_size = 80 %}
-                {% assign cloudinary_url = 'https://res.cloudinary.com/dkaxmhco0/image/upload/c_scale,w_1200,h_630/c_fit,w_1000,co_rgb:fff,l_text:Arial_75_700:' | append: encoded_text | append: '/fl_layer_apply,g_west,x_57,y_50/ymcc3z0nbnt45xijystj.png' %}
+                    {% assign default_image = post.title | replace: ' ', '%20' | replace: ',', '%252C' %}
+                    {% assign encoded_text = default_image | replace: '&', '%2526' | replace: ':', '%253A' | replace: '%', '%25' | replace: '#', '%2523' | replace: '?', '%253F' | replace: '$', '%2524' | replace: '@', '%2540' | replace: '+', '%252B' | replace: '/', '%252F' | replace: '\\', '%255C' %}
+                    {% assign text_size = 80 %}
+                    {% assign cloudinary_url = 'https://res.cloudinary.com/dkaxmhco0/image/upload/c_scale,w_1280,h_669/c_fit,w_1000,l_text:Arial_' | append: text_size | append: ':' | append: encoded_text | append: '/fl_layer_apply/slhzxxgpldw3fntkto3s.jpg' %}
                     {% if site.lazyimages == "enabled" %}
                         <img class="img-thumb lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{{ cloudinary_url }}" alt="{{ post.title }}">
                     {% else %}
@@ -24,7 +24,7 @@
                     {% endif %}
                 {% endif %}
             </a>
-        </div>        
+        </div>               
         <div class="card-body">
             <h2 class="card-title">
                 <a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
