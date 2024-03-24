@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "French Wine has to compete with many new world wines"
-author: john
+author: Amitabh Borah
 categories: [ PLugins]
 tags: [France]
 image: assets/images/5.jpg

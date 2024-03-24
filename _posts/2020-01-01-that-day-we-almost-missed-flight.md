@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "That day when we almost missed our flight"
-author: sal
+author: Amitabh Borah
 categories: [ Plugins ]
 image: assets/images/17.jpg
 ---

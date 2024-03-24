@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  " Culinary Arts in Europe by Jean Anthelme Brillat-Savarin"
-author: sal
+author: Amitabh Borah
 categories: [ Plugins ]
 image: assets/images/7.jpg
 ---
