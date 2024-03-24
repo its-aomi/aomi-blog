@@ -13,7 +13,7 @@
                         <img class="img-thumb" src="{{ post.image }}" alt="{{ post.title }}">
                     {% endif %}
                 {% else %}
-                    {% assign default_image = post.title | replace: ' ', '%20' | replace: ',', '%252C' %}
+                    {% assign default_image = post.title | replace: ' ', '%20' | replace: ',', '%2C' %}
                     {% assign encoded_text = default_image | replace: '&', '%2526' | replace: ':', '%253A' | replace: '%', '%25' | replace: '#', '%2523' | replace: '?', '%253F' | replace: '$', '%2524' | replace: '@', '%2540' | replace: '+', '%252B' | replace: '/', '%252F' | replace: '\\', '%255C' %}
                     {% assign text_size = 80 %}
                     {% assign cloudinary_url = 'https://res.cloudinary.com/dkaxmhco0/image/upload/c_scale,w_1200,h_630/c_fit,w_1000,co_rgb:fff,l_text:Arial_75_700:' | append: encoded_text | append: '/fl_layer_apply,g_west,x_57/ymcc3z0nbnt45xijystj.png' %}
