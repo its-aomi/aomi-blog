@@ -20,7 +20,7 @@
 		<meta property="og:title" content="{% if page.title %}{{page.title}} - Amitabh Borah{% else %}{{site.title}}{% endif %}" />
 		<meta property="og:description" content="{% if page.description %}{{page.description}} {% else %}{{site.description}}{% endif %}" />
 
-		{% assign encoded_text = page.title | replace: ' ', '%20' | replace: ',', '%252C' | replace: '&', '%2526' | replace: ':', '%253A' | replace: '%', '%25' | replace: '#', '%2523' | replace: '?', '%253F' | replace: '$', '%2524' | replace: '@', '%2540' | replace: '+', '%252B' | replace: '/', '%252F' | replace: '\\', '%255C' | replace: '(', '%28' | replace: ')', '%29' | replace: '[', '%5B' | replace: ']', '%5D' | replace: '{', '%7B' | replace: '}', '%7D' | replace: '|', '%7C' | replace: '<', '%3C' | replace: '>', '%3E' | replace: '=', '%3D' | replace: '!', '%21' | replace: '`', '%60' | replace: '~', '%7E' %}
+		{% assign encoded_text = page.title | replace: ',', '%252C' | replace: '&', '%2526' | replace: ':', '%253A' | replace: '%', '%25' | replace: '#', '%2523' | replace: '?', '%253F' | replace: '$', '%2524' | replace: '@', '%2540' | replace: '+', '%252B' | replace: '/', '%252F' | replace: '\\', '%255C' | replace: '(', '%28' | replace: ')', '%29' | replace: '[', '%5B' | replace: ']', '%5D' | replace: '{', '%7B' | replace: '}', '%7D' | replace: '|', '%7C' | replace: '<', '%3C' | replace: '>', '%3E' | replace: '=', '%3D' | replace: '!', '%21' | replace: '`', '%60' | replace: '~', '%7E' %}
 		{% assign text_size = 80 %}
 		{% assign cloudinary_url = 'https://res.cloudinary.com/dkaxmhco0/image/upload/c_scale,w_1280,h_669/c_fit,w_1000,l_text:Arial_' | append: text_size | append: ':' | append: encoded_text | append: '/fl_layer_apply/slhzxxgpldw3fntkto3s.jpg' %}
 		
