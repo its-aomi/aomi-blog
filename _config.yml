@@ -6,7 +6,7 @@ logo: 'assets/images/logo-aomi.png'
 favicon: 'favicon.ico'
 baseurl: /
 google_analytics: 'UA-xxxxxxxx-1'
-disqus: 'demowebsite'
+disqus: ''
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 include: ["_pages"]
 permalink: /:title/
@@ -17,11 +17,11 @@ authors:
   sal:
     name: Amitabh Borah
     display_name: Amitabh Borah
-    avatar: 'assets/images/avatar-sal.png'
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net/donate/
-    twitter: https://twitter.com/wowthemesnet
-    description: "Author of Memoirs, a Bootstrap Medium styled template available for Jekyll. You are currently previewing Jekyll template demo."
+    avatar: 'assets/images/me.jpg'
+    email: contact@aomi.blog
+    web: https://aomi.blog/
+    twitter: 
+    description: "Freelance developer & motorcycle enthusiast. Providing affordable plugins at 1dollarCode.com."
 
 # Plugins
 plugins:
@@ -55,8 +55,8 @@ kramdown:
 
 # Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
 adsense: "disabled"
-adsense-data-ad-client: "ca-pub-3412143450191416"
-adsense-data-ad-slot: "1363087678"
+adsense-data-ad-client: ""
+adsense-data-ad-slot: ""
 
 # Lazy Images ("enabled" or "disabled")
 lazyimages: "disabled"
@@ -68,5 +68,8 @@ authorbox: "enabled"
 sass:
   sass_dir: _sass
   style: compressed
+
+# Comments
+comments: false
 
 exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
