@@ -22,5 +22,5 @@ Beyond the realm of coding, I find solace and excitement in the world of motorcy
 
 If you share a similar passion for coding or motorcycles, or perhaps both, I'd love to connect with you! Feel free to reach out for collaborations, discussions, or even just to share your latest coding project or motorcycle adventure. Let's embark on this journey together, fueled by our passions and a drive for innovation.
 
-<a target="_blank" href="https://bootstrapstarter.com/jekyll-theme-memoirs/" class="btn btn-dark"> Get Memoirs for Jekyll &rarr;</a>
+<a target="_blank" href="https://1dollarcode.com/" class="btn btn-dark"> Get Plugins & Codes</a>
 
