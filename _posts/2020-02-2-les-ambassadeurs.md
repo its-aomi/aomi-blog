@@ -4,7 +4,7 @@ title:  "Test, Okay & Testing :)"
 author: Amitabh Borah
 categories: [ Codes ]
 tags: [ France ]
-image: assets/images/2.jpg
+image: 
 rating: 4.5
 ---
 
