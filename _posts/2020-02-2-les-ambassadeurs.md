@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Les Ambassadeurs, the first Restaurant we Visited in Paris"
+title:  "Test, Okay & Testing :)"
 author: Amitabh Borah
 categories: [ Codes ]
 tags: [ France ]
