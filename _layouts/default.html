@@ -14,12 +14,6 @@
     
     {% seo %}
     
-    {% if page.title %}
-        {% assign og_image_text = page.title | replace: ' ', '_' %}
-        {% assign cloudinary_url = 'https://res.cloudinary.com/dkaxmhco0/image/upload/l_text:Arial_80:' | append: og_image_text | append: '/fl_layer_apply/slhzxxgpldw3fntkto3s.jpg' %}
-        <meta property="og:image" content="{{ cloudinary_url | escape }}">
-    {% endif %}
-    
     <link href="{{ site.baseurl }}/assets/css/prism.css" rel="stylesheet">
     <link href="{{ site.baseurl }}/assets/css/theme.css" rel="stylesheet">
     
