@@ -2,8 +2,8 @@
 name: "Amitabh Borah"
 title: "Amitabh Borah"
 description: "Hi, i am a freelance developer with an interest in adventure motorcycles !!"
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
+logo: 'assets/images/bora.svg'
+favicon: 'favicon.ico'
 baseurl: /
 google_analytics: 'UA-xxxxxxxx-1'
 disqus: 'demowebsite'
