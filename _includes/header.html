@@ -23,7 +23,7 @@
 		{% assign user_text = page.title | replace: ' ', '%20' | replace: ',', '%2C' %}
 		{% assign encoded_text = user_text | replace: '%', '%25' | replace: '&', '%26' | replace: ':', '%3A' | replace: '#', '%23' | replace: '?', '%3F' | replace: '$', '%24' | replace: '@', '%40' | replace: '+', '%2B' | replace: '/', '%2F' | replace: '\\', '%5C' %}
 		{% assign text_size = 80 %}
-		{% assign cloudinary_url = 'https://res.cloudinary.com/dkaxmhco0/image/upload/c_scale,w_1200,h_630/c_fit,w_1000,co_rgb:fff,l_text:Arial_75_700:' | append: encoded_text | append: '/fl_layer_apply,g_west,x_57/ymcc3z0nbnt45xijystj.png' %}
+		{% assign cloudinary_url = 'https://res.cloudinary.com/dkaxmhco0/image/upload/c_scale,w_1200,h_630/c_fit,w_1000,co_rgb:fff,l_text:Arial_75_700:' | append: encoded_text | append: '/fl_layer_apply,g_west,x_57,y_50/ymcc3z0nbnt45xijystj.png' %}
 		
 		{% assign fallback_image = "assets/images/logo-aomi.png" %}
 		<meta property="og:image" content="{{ cloudinary_url | default: fallback_image | escape }}"> 	
