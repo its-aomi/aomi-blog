@@ -1,28 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<link rel="icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-
-<title>{{ page.title }} | {{site.name}}</title>
-
-{% seo %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-<link href="{{ site.baseurl }}/assets/css/prism.css" rel="stylesheet">
-
-<link href="{{ site.baseurl }}/assets/css/theme.css" rel="stylesheet">
-
-<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
-
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <title>{{ page.title }} | {{site.name}}</title>
+    
+    {% seo %}
+    
+    {% if page.title %}
+        {% assign og_image_text = page.title | replace: ' ', '_' %}
+        {% assign cloudinary_url = 'https://res.cloudinary.com/dkaxmhco0/image/upload/l_text:Arial_80:' | append: og_image_text | append: '/fl_layer_apply/slhzxxgpldw3fntkto3s.jpg' %}
+        <meta property="og:image" content="{{ cloudinary_url | escape }}">
+    {% endif %}
+    
+    <link href="{{ site.baseurl }}/assets/css/prism.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/assets/css/theme.css" rel="stylesheet">
+    
+    <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 </head>
+
 
 {% if jekyll.environment == 'production' %}
 <!-- change your GA id in _config.yml -->
