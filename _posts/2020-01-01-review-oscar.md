@@ -4,7 +4,7 @@ title:  "Reviewing the best Oscar movies of all time"
 author: Amitabh Borah
 categories: [ Plugins ]
 tags: [Movies]
-image: assets/images/11.jpg
+image: 
 description: "My review of Inception movie. Acting, plot and something else in this short description."
 rating: 4.5
 ---
