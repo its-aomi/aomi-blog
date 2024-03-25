@@ -5,6 +5,12 @@ permalink: /contact
 comments: false
 ---
 
+<style>
+img.featured-image {
+    display: none !important;
+}
+</style>
+
 <form action="https://submit-form.com/7oP2INVZZ" method="POST">    
 <p class="mb-4">Please send your message to {{site.name}}. You'll recieve an reply as soon as possible!</p>
 <div class="form-group row">
