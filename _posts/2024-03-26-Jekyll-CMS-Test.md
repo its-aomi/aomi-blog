@@ -7,7 +7,7 @@ author: Amitabh Borah
 permalink: "/jekyll-cms-test/"
 categories: [ Plugins ]
 tags: []
-image: ""
+image: 
 rating: 5
 ---
 
