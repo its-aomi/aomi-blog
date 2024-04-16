@@ -1,13 +1,13 @@
 # Site
 name: "Amitabh Borah"
 title: "Amitabh Borah"
-description: "Hi i am Amitabh Borah, a freelance developer with an interest in motorcycles !!"
+description: "Hi i am Amitabh Borah, a freelance developer !!"
 logo: 'assets/images/logo-aomi.png'
 favicon: 'favicon.ico'
 baseurl: /
-google_analytics: 'UA-xxxxxxxx-1'
+google_analytics: ''
 disqus: ''
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+mailchimp-list: ''
 include: ["_pages"]
 permalink: /:title/
 email: contact@aomi.blog
@@ -21,7 +21,7 @@ authors:
     email: contact@aomi.blog
     web: https://aomi.blog/
     twitter: 
-    description: "Freelance developer & motorcycle enthusiast. Providing affordable plugins at 1dollarCode.com."
+    description: "Freelance developer. Providing affordable plugins at 1dollarCode.com."
 
 # Plugins
 plugins:
