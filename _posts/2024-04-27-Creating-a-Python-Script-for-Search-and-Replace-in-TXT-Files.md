@@ -9,6 +9,7 @@ categories: [ Codes ]
 tags: []
 image: 
 rating: 5
+dl: "https://example.com"
 ---
 
 The ability to search for specific strings and replace them with desired alternatives is a fundamental task. Whether you're a programmer, a content creator, or a data analyst, having a tool to automate this process can save you significant time and effort. 
