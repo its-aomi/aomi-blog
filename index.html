@@ -474,14 +474,14 @@
             <span></span>
         </div>
         <div class="nav-links">
-            <a href="#" style="--delay: 1">Resume</a>
-            <a href="#" style="--delay: 2">Work</a>
-            <a href="#" style="--delay: 3">Contact</a>
+            <a href="#resume" style="--delay: 1">Resume</a>
+            <a href="#work" style="--delay: 2">Work</a>
+            <a onclick="BrevoConversations('openChat', true)" style="--delay: 3;cursor: pointer;">Contact</a>
         </div>
     </nav>
 
     <!-- Hero section remains the same -->
-    <main class="hero">
+    <main class="hero" id="resume">
         <div class="profile-container">
             <img src="https://res.cloudinary.com/dkaxmhco0/image/upload/v1732079621/qfykh5gvbnf6syk7msd3.png"
                 alt="Profile Picture" class="profile-pic">
@@ -502,7 +502,7 @@
     </main>
 
     <!-- Modified Portfolio section -->
-    <section class="portfolio">
+    <section class="portfolio" id="work">
         <h2 class="section-title">Featured Work</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item">
@@ -534,9 +534,9 @@
     <!-- Footer remains the same -->
     <footer class="footer">
         <div class="contact-info">
-            <div>Phone: (555) 123-4567</div>
-            <div>Email: your.email@example.com</div>
-            <div>© 2024 Your Name</div>
+            <div>Github: <a style="color: #fff;" href="https://github.com/its-aomi/">its-aomi</a></div>
+            <div>Email: aomi@duck.com</div>
+            <div>© 2024 Amitabh Borah</div>
         </div>
     </footer>
 
