@@ -1,0 +1,66 @@
+#     _                 _ _        _     _       ____                  _     
+#    / \   _ __ ___   (_) |_ __ _| |__ | |__   | __ )  ___  _ __ __ _| |__  
+#   / _ \ | '_ ` _ \  | | __/ _` | '_ \| '_ \  |  _ \ / _ \| '__/ _` | '_ \ 
+#  / ___ \| | | | | | | | || (_| | |_) | | | | | |_) | (_) | | | (_| | | | |
+# /_/   \_\_| |_| |_| |_|\__\__,_|_.__/|_| |_| |____/ \___/|_|  \__,_|_| |_|
+#
+# Welcome to aomi.blog! 
+# Developer & Digital Craftsman
+# Contact: aomi@duck.com
+
+User-agent: *
+Allow: /
+
+# Allow all bots to access the sitemap
+Sitemap: https://aomi.blog/sitemap.xml
+
+# Main sections
+Allow: /hire-cloudinary-developer/
+Allow: /hire-ezoic-ads-setup-expert/
+Allow: /hire-wordpress-plugin-developer/
+
+# Block access to development/admin areas
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /dev/
+Disallow: /staging/
+Disallow: /.git/
+
+# Block query parameters for analytics and tracking
+Disallow: /*?utm_
+Disallow: /*&utm_
+Disallow: /*?fb_
+Disallow: /*&fb_
+Disallow: /*?gclid=
+Disallow: /*&gclid=
+
+# Prevent indexing of duplicate content
+Disallow: /*?sort=
+Disallow: /*&sort=
+Disallow: /*?filter=
+Disallow: /*&filter=
+Disallow: /*?s=
+Disallow: /*&s=
+
+# Rate limiting directives
+
+# Special directives for specific bots
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /

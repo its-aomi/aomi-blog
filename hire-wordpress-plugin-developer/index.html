@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Previous head and style sections remain the same, but adding a new highlight class for WordPress -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire a WordPress Plugin Developer | Amitabh Borah</title>
+    <!-- [Previous head content and styles remain exactly the same] -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #2d2d2d;
+            --accent1: #8b4949;
+            --accent2: #694949;
+            --accent3: #493939;
+            --text: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
+        body {
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 100;
+            opacity: 0;
+            animation: slideDown 0.5s ease forwards;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+            opacity: 0;
+            animation: slideDown 0.5s ease forwards;
+            animation-delay: calc(var(--delay) * 0.1s);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent1);
+        }
+
+        .blog-container {
+            max-width: 800px;
+            margin: 120px auto 40px;
+            padding: 0 20px;
+        }
+
+        .blog-header {
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .blog-title {
+            font-family: "IBM Plex Mono", monospace;
+            font-weight: 100;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent1);
+        }
+
+        .blog-meta {
+            color: var(--text);
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .blog-content {
+            opacity: 0;
+            animation: slideRight 1s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .blog-content h2 {
+            font-family: "IBM Plex Mono", monospace;
+            font-weight: 300;
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: var(--accent1);
+        }
+
+        .highlight {
+            padding: 1px 5px;
+            border-radius: 10px;
+            font-style: italic;
+            transition: all 0.3s ease;
+        }
+
+        .wordpress {
+            background: rgba(32, 113, 150, 0.15);
+            color: #3498db;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--secondary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--accent1);
+            margin-bottom: 0.5rem;
+            font-family: "IBM Plex Mono", monospace;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--secondary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: var(--accent1);
+            margin-bottom: 1rem;
+            font-family: "IBM Plex Mono", monospace;
+            font-weight: 300;
+        }
+
+        .feature-card p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        .call-to-action {
+            background: var(--secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .call-to-action h3 {
+            color: var(--accent1);
+            margin-bottom: 1rem;
+        }
+
+        .call-to-action ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .call-to-action li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer {
+            padding: 2rem;
+            background: var(--secondary);
+            margin-top: 4rem;
+        }
+
+        .contact-info {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideRight {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .blog-container {
+                margin-top: 100px;
+            }
+
+            .blog-title {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Tablet and medium screens */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Amitabh Borah</div>
+        <div class="nav-links">
+            <a href="#resume" style="--delay: 1">Resume</a>
+            <a href="#work" style="--delay: 2">Work</a>
+            <a onclick="BrevoConversations('openChat', true)" style="--delay: 3;cursor: pointer;">Contact</a>
+        </div>
+    </nav>
+
+    <main class="blog-container">
+        <header class="blog-header">
+            <h1 class="blog-title">Custom WordPress Plugin Development</h1>
+            <div class="blog-meta">
+                Posted on November 21, 2024 • 8 min read
+            </div>
+        </header>
+
+        <article class="blog-content">
+            <p>In the vast ecosystem of WordPress, custom plugin development stands as the cornerstone of extending
+                functionality and creating unique website experiences. As a seasoned <span
+                    class="highlight wordpress">WordPress plugin developer</span> with over 5 years of experience and
+                200+ successful projects, I specialize in transforming your ideas into powerful, efficient, and
+                user-friendly WordPress plugins.</p>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Custom Plugins Developed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+            </div>
+
+            <h2>Why Custom Plugin Development Matters</h2>
+            <p>While the WordPress repository offers thousands of plugins, custom development provides targeted
+                solutions that perfectly align with your specific needs. Through my experience, I've found that custom
+                plugins not only deliver exactly what businesses need but also often perform better than cobbling
+                together multiple generic plugins. They're lighter, faster, and precisely tailored to your requirements.
+            </p>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Performance Optimized</h3>
+                    <p>Custom-built plugins with clean, efficient code that won't slow down your site.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Security First</h3>
+                    <p>Robust security measures and WordPress best practices built into every plugin.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Scalable Solutions</h3>
+                    <p>Plugins that grow with your business, handling increased loads efficiently.</p>
+                </div>
+            </div>
+
+            <h2>Development Process & Expertise</h2>
+            <p>My approach to plugin development combines technical expertise with business understanding. Every project
+                begins with a thorough analysis of your requirements, followed by detailed planning and architecture
+                design. I specialize in creating plugins that integrate seamlessly with WordPress core functions while
+                maintaining high performance and security standards.</p>
+
+            <h2>Recent Success Stories</h2>
+            <p>Recently, I developed a custom e-commerce extension plugin for a client that increased their conversion
+                rate by 35%. The plugin introduced advanced filtering capabilities, custom payment integrations, and
+                automated inventory management. Another notable project was a content management plugin for a media
+                company that reduced their content processing time by 60% through automated workflows and custom
+                taxonomies.</p>
+
+            <div class="call-to-action">
+                <h3>Specialized Plugin Development Services</h3>
+                <p>My comprehensive plugin development services include:</p>
+                <ul>
+                    <li>Custom feature development and functionality extension</li>
+                    <li>E-commerce and payment gateway integrations</li>
+                    <li>API integrations and third-party service connections</li>
+                    <li>Performance optimization and security hardening</li>
+                    <li>Custom admin interfaces and user role management</li>
+                    <li>Database optimization and custom query handling</li>
+                    <li>Migration tools and data synchronization plugins</li>
+                </ul>
+            </div>
+
+            <h2>Technical Excellence</h2>
+            <p>Every plugin I develop adheres to WordPress coding standards and best practices. This includes
+                implementing proper security measures, optimizing database queries, and ensuring compatibility with the
+                latest WordPress versions. I take pride in writing clean, well-documented code that's easy to maintain
+                and update.</p>
+
+            <h2>Common Use Cases</h2>
+            <p>While each project is unique, some common types of plugins I develop include custom post type managers,
+                e-commerce extensions, membership systems, content protection tools, and integration plugins for
+                third-party services. Each solution is built with scalability in mind, ensuring your plugin can handle
+                growing demands as your business expands.</p>
+
+            <h2>Performance and Security</h2>
+            <p>Performance is at the heart of every plugin I develop. Through careful optimization and efficient coding
+                practices, I ensure that plugins add functionality without compromising site speed. Security is equally
+                crucial, and I implement robust measures to protect against common vulnerabilities and threats.</p>
+
+            <h2>Support and Maintenance</h2>
+            <p>My commitment doesn't end with development. I provide comprehensive documentation, training if needed,
+                and ongoing support to ensure your plugin continues to perform optimally. Regular updates and
+                maintenance ensure compatibility with new WordPress versions and sustained security.</p>
+
+            <div class="call-to-action">
+                <h3>Ready to Build Your Custom WordPress Plugin?</h3>
+                <p>Whether you need to extend your site's functionality, automate workflows, or create unique features
+                    for your users, I can help bring your vision to life. Let's discuss your requirements and create a
+                    custom plugin that perfectly matches your needs.</p>
+                <p>With expertise in both simple and complex plugin development, I can help you:</p>
+                <ul>
+                    <li>Create custom functionality tailored to your specific needs</li>
+                    <li>Optimize existing plugins for better performance</li>
+                    <li>Develop secure, scalable solutions</li>
+                    <li>Integrate third-party services seamlessly</li>
+                </ul>
+            </div>
+
+            <p>Contact me today to discuss your plugin development needs and get a custom solution that drives results
+                for your WordPress website.</p>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="contact-info">
+            <div>Github: <a style="color: #fff;" href="https://github.com/its-aomi/">its-aomi</a></div>
+            <div>Email: aomi@duck.com</div>
+            <div>© 2024 Amitabh Borah</div>
+        </div>
+    </footer>
+</body>
+
+</html>
