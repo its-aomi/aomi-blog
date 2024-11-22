@@ -15,6 +15,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="./css/popup.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Primary Meta Tags -->
     <title>Amitabh Borah | Freelance Web Developer</title>
@@ -566,7 +567,7 @@
         <div class="nav-links">
             <a href="#resume" style="--delay: 1">Resume</a>
             <a href="#work" style="--delay: 2">Work</a>
-            <a onclick="BrevoConversations('openChat', true)" style="--delay: 3;cursor: pointer;" class="contact">Contact</a>
+            <a style="--delay: 3;cursor: pointer;" class="contact">Contact</a>
         </div>
     </nav>
 
@@ -578,8 +579,8 @@
         </div>
         <div class="content">
             <h1>Freelance Web Developer</h1>
-            <div class="subtitle">5+ years of experience & 200+ clients..</div>
-            <p>Hi, i am Amitabh Borah a freelance web developer with 5+ years of experience and over 200 successful projects, I specialize in
+            <div class="subtitle">5+ years of experience & 300+ clients..</div>
+            <p>Hi, i am Amitabh Borah a freelance web developer with 5+ years of experience and over 300+ successful projects, I specialize in
                 <span class="highlight web">website development</span>,
                 <span class="highlight wordpress">WordPress sites and plugin development</span>,
                 <span class="highlight app">custom app solutions</span>,
@@ -590,7 +591,7 @@
             <p style="font-style: italic;">Ready to start your next digital journey? View my work or let's talk about
                 your project.</p>
             <div class="buttons">
-                <a onclick="BrevoConversations('openChat', true)" class="button primary-btn"
+                <a class="button primary-btn contact"
                     style="cursor:pointer;">Contact</a>
                 <a href="#work" class="button secondary-btn">View Work</a>
             </div>
@@ -826,42 +827,73 @@
 
     <div class="popup-overlay" id="contactPopup">
         <div class="popup-container">
-            <button class="close-button" onclick="closePopup()">×</button>
+            <button class="close-button" onclick="closePopup()">
+                <i class="fas fa-times"></i>
+            </button>
             <div class="popup-header">
-                <h2 class="popup-title">How can I help you?</h2>
-                <p class="popup-subtitle">Select a service to get started</p>
+                <h2 class="popup-title">
+                    <i class="fas fa-headset"></i> How can I help you?
+                </h2>
+                <p class="popup-subtitle">Need help with website development, plugin development or setup, cloudinary, ezoic ads or custom app development. Contact me from below.</p>
             </div>
     
             <div class="service-grid">
                 <div class="service-option" onclick="selectService(this, 'website')">
-                    <div class="service-icon">🌐</div>
-                    <div>Website Development</div>
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="service-text">Website Development</div>
                 </div>
                 <div class="service-option" onclick="selectService(this, 'wordpress')">
-                    <div class="service-icon">🔌</div>
-                    <div>WordPress Plugins</div>
+                    <div class="service-icon">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <div class="service-text">WordPress Plugins</div>
                 </div>
                 <div class="service-option" onclick="selectService(this, 'cloudinary')">
-                    <div class="service-icon">☁️</div>
-                    <div>Cloudinary Setup</div>
+                    <div class="service-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div class="service-text">Cloudinary Setup</div>
                 </div>
                 <div class="service-option" onclick="selectService(this, 'ezoic')">
-                    <div class="service-icon">📊</div>
-                    <div>Ezoic Ads Setup</div>
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="service-text">Ezoic Ads Setup</div>
                 </div>
             </div>
     
             <div class="contact-options">
                 <a href="#" class="contact-button" onclick="openChat(); return false;">
-                    <span>💬</span> Live Chat
+                    <i class="fas fa-comments"></i>
+                    <div class="contact-info">
+                        <div class="contact-label">Live Chat</div>
+                        <div class="response-time instant">
+                            <i class="fas fa-clock"></i> Instant Reply
+                        </div>
+                    </div>
                 </a>
                 <a href="https://wa.me/+919101114705" target="_blank" class="contact-button">
-                    <span>📱</span> WhatsApp
+                    <i class="fab fa-whatsapp"></i>
+                    <div class="contact-info">
+                        <div class="contact-label">WhatsApp</div>
+                        <div class="response-time quick">
+                            <i class="fas fa-clock"></i> Instant Reply
+                        </div>
+                    </div>
                 </a>
                 <a href="mailto:aomi@duck.com" class="contact-button">
-                    <span>📧</span> Email
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-info">
+                        <div class="contact-label">Email</div>
+                        <div class="response-time slow">
+                            <i class="fas fa-history"></i> Within 24 hrs
+                        </div>
+                    </div>
                 </a>
             </div>
+            <p class="notice">You'll get instant replies to live chat and whatsapp if i'm online, or within 8 hours if offline.</p>
         </div>
     </div>
 

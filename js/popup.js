@@ -1,12 +1,15 @@
-
 let selectedService = '';
+let hasPopupBeenShown = false; // Track if popup has been shown automatically
 
 // Add click event listener to all contact buttons
 document.addEventListener('DOMContentLoaded', function() {
     // Add click handlers to all contact buttons
     const contactButtons = document.querySelectorAll('.contact');
     contactButtons.forEach(button => {
-        button.addEventListener('click', showPopup);
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPopup();
+        });
     });
 
     // Add click outside handler to popup
@@ -18,10 +21,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize contact links
     updateContactLinks();
+
+    // Show popup automatically after 5 seconds if it hasn't been shown
+    setTimeout(() => {
+        if (!hasPopupBeenShown) {
+            showPopup();
+        }
+    }, 5000);
 });
 
 function showPopup() {
+    // Don't show if already visible
     const popup = document.getElementById('contactPopup');
+    if (popup.style.display === 'flex') return;
+    
+    hasPopupBeenShown = true;
     popup.style.display = 'flex';
     // Trigger reflow
     popup.offsetHeight;
@@ -74,7 +88,7 @@ function updateContactLinks() {
     
     // Update WhatsApp link
     const whatsappLink = document.querySelector('a[href*="wa.me"]');
-    whatsappLink.href = `https://wa.me/+919101114705?text=${message}`;
+    whatsappLink.href = `https://wa.me/+916026029630?text=${message}`;
     
     // Update Email link
     const emailLink = document.querySelector('a[href*="mailto"]');
@@ -83,6 +97,9 @@ function updateContactLinks() {
 }
 
 function openChat() {
+    // Close popup when opening chat
+    closePopup();
+    
     // Open Brevo chat
     BrevoConversations('openChat', true);
     
